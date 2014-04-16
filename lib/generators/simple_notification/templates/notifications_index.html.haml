@@ -1,0 +1,4 @@
+%h1 Listing All Notifications
+
+- @notifications.each do |notification|
+  = render "notifications/show", notification_id: notification.id, read: true

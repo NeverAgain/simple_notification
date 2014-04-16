@@ -1,0 +1,31 @@
+- @notification = Notification.find(notification_id)
+- if read
+  - @notification.read = true
+- @notification.save
+.notification
+  %p
+    - if @notification.owner == nil
+      %b Guest
+    - else
+      %b
+        = link_to @notification.owner do
+          = @notification.owner.username
+
+    = @notification.message
+
+    - if @notification.trackable == nil
+      %b which has since been deleted
+    - else
+      %b
+        = link_to @notification.trackable do
+          = @notification.trackable_type
+    \|
+    This notification was sent to
+    - if @notification.recipient == nil
+      %b Deleted User
+    - else
+      %b
+        = link_to @notification.recipient do
+          = @notification.recipient.username
+    \|
+    = link_to 'Destroy', @notification, :method => :delete, :data => { :confirm => 'Are you sure?' }
