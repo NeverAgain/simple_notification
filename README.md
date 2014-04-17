@@ -64,10 +64,10 @@ Method to **notify** a user of a tracked event:
 
 which will generate a notification from current_user (guest if undefined) to the recipient with the message and trackable source.
 
-Wrapper methods to display a notification using the default partial:
+Notifications are now working and can be displayed however desired, sample usages are:
 
-    show_with_read(notification)
-    show_without_read(notification)
+    render "notifications/show", notification_id: notification.id, read: false
+    render "notifications/show", notification_id: notification.id, read: true
 
 Will will generate the following by default:
 
