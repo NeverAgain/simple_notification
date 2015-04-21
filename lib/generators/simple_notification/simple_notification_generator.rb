@@ -11,7 +11,7 @@ class SimpleNotificationGenerator < Rails::Generators::Base
   end
 
   def generate_model
-    copy_file "notification.rb", "app/models/notification.rb"
+    copy_file "simple_notification.rb", "app/models/simple_notification.rb"
   end
 
   def generate_controller

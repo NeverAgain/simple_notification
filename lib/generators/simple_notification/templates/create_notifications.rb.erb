@@ -1,6 +1,6 @@
 class CreateNotifications < ActiveRecord::Migration
   def change
-    create_table :notifications do |t|
+    create_table :simple_notifications do |t|
       t.integer :owner_id
       t.integer :recipient_id
       t.integer :trackable_id
